@@ -11,6 +11,8 @@ function setupCanvas() {
         alert('浏览器不支持 canvas 2d API');
         return;
     }
+    canvas.width = canvas.getBoundingClientRect().width;
+    canvas.height = canvas.getBoundingClientRect().height;
     context.fillStyle = 'white';
     context.fillRect(0, 0, canvas.width, canvas.height);
     return [canvas, context];
@@ -23,7 +25,7 @@ function drawA(canvas, context) {
     context.fillRect(rectWidth, 0, rectWidth, rectHeight);
 
     const textSize = 20;
-    context.font = `${textSize}px`;
+    context.font = `${textSize}px serif`;
     context.fillStyle = 'black';
     context.textAlign = 'center';
     context.fillText('A', canvas.width / 2, canvas.height / 2);
@@ -37,7 +39,7 @@ function drawB(canvas, context) {
     const rectHeight = textSize;
     context.fillRect(rectWidth, canvas.height - rectHeight, rectWidth, rectHeight);
 
-    context.font = `${textSize}px`;
+    context.font = `${textSize}px serif`;
     context.fillStyle = 'black';
     context.textAlign = 'center';
     context.textBaseline = 'middle';
