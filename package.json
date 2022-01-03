@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "http-server . -o /index.html"
+    "dev": "http-server . -o /index.html -c-1"
   },
   "author": "",
   "license": "ISC",
