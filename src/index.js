@@ -1,5 +1,5 @@
 (function main() {
-    const context = setupCanvas();
+    const [canvas, context] = setupCanvas();
 })();
 
 function setupCanvas() {
@@ -10,6 +10,6 @@ function setupCanvas() {
         return;
     }
     context.fillStyle = 'white';
-    context.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-    return context;
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    return [canvas, context];
 }
