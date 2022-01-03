@@ -1,6 +1,7 @@
 (function main() {
     const [canvas, context] = setupCanvas();
     drawA(canvas, context);
+    drawB(canvas, context);
 })();
 
 function setupCanvas() {
@@ -27,4 +28,21 @@ function drawA(canvas, context) {
     context.textAlign = 'center';
     context.fillText('A', canvas.width / 2, canvas.height / 2);
 }
+
+function drawB(canvas, context) {
+    const textSize = 20;
+
+    context.fillStyle = 'blue';
+    const rectWidth = canvas.width / 3;
+    const rectHeight = textSize;
+    context.fillRect(rectWidth, canvas.height - rectHeight, rectWidth, rectHeight);
+
+    context.font = `${textSize}px`;
+    context.fillStyle = 'black';
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.fillText('B', canvas.width / 2, canvas.height - rectHeight / 2);
+}
+
+
 
