@@ -1,15 +1,15 @@
 (function main() {
-    const context = setupWebGL();
+    const context = setupCanvas();
 })();
 
-function setupWebGL() {
+function setupCanvas() {
     const canvas = document.getElementById('canvas');
-    const context = canvas.getContext('webgl2');
+    const context = canvas.getContext('2d');
     if (!context) {
-        alert('浏览器不支持 webgl2');
+        alert('浏览器不支持 canvas 2d API');
         return;
     }
-    context.clearColor(1.0, 1.0, 1.0, 1.0);
-    context.clear(context.COLOR_BUFFER_BIT);
+    context.fillStyle = 'white';
+    context.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
     return context;
 }
