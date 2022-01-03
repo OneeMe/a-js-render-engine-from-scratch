@@ -23,6 +23,7 @@ function drawA(canvas, context) {
     const rectWidth = canvas.width / 3;
     const rectHeight = canvas.height;
     context.fillRect(rectWidth, 0, rectWidth, rectHeight);
+    context.strokeRect(rectWidth, 0, rectWidth, rectHeight);
 
     const textSize = 20;
     context.font = `${textSize}px serif`;
@@ -38,6 +39,7 @@ function drawB(canvas, context) {
     const rectWidth = canvas.width / 3;
     const rectHeight = textSize;
     context.fillRect(rectWidth, canvas.height - rectHeight, rectWidth, rectHeight);
+    context.strokeRect(rectWidth, canvas.height - rectHeight, rectWidth, rectHeight);
 
     context.font = `${textSize}px serif`;
     context.fillStyle = 'black';
